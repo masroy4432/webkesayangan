@@ -1,0 +1,144 @@
+<!DOCTYPE html><html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Novita</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 70px;
+            font-family: Arial;
+        }#btn {
+        font-size: 30px;
+        padding: 18px 40px;
+        background: #ff8fa3;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #msg {
+        display: none;
+        margin-top: 50px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #c9184a;
+    }
+
+    /* Background romantis gradasi */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+  animation: bgMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+  from { background-position: left; }
+  to { background-position: right; }
+}
+
+/* Container */
+.container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Judul */
+h1 {
+  font-size: 28px;
+  color: #b30059;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Input */
+input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 15px;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255,255,255,0.8);
+}
+
+/* Tombol */
+button {
+  padding: 12px 20px;
+  background: #ff4d79;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(255,0,70,0.4);
+}
+
+button:hover {
+  background: #ff3366;
+  transform: scale(1.05);
+}
+
+/* Output */
+#hasil {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #800040;
+  font-weight: bold;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+</style>
+
+</head>
+<body><button id="btn">Tombol 1</button>
+<div id="msg"></div>
+
+<script>
+    let index = 0;
+    const messages = [
+        "Selamat siang Novita sayangg",
+        "Kamu cantik banget hari ini",
+        "Sehat sehat terus ya sayanggg"
+    ];
+
+    const btn = document.getElementById('btn');
+    const msg = document.getElementById('msg');
+
+    btn.onclick = function () {
+        msg.innerText = messages[index];
+        msg.style.display = "block";
+        btn.style.display = "none";
+
+        setTimeout(() => {
+            msg.style.display = "none";
+            index++;
+
+            if (index < messages.length) {
+                btn.innerText = "Tombol " + (index + 1);
+                btn.style.display = "inline-block";
+            }
+        }, 5000);
+    }
+</script>
+
+
+</body>
+</html>
